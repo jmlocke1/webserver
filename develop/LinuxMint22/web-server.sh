@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Variables de las versiones de los programas
+PHP=php8.3
+
 #El primer paso es instalar aplicaciones básicas
 sudo apt install build-essential
 sudo apt install htop
@@ -51,18 +54,15 @@ default-character-set=utf8mb4
 
 ' >> /etc/mysql/my.cnf
 
-# Instalando php 8.1
-# apt install php8.1
-#Extensiones de php8.1
-# apt install php8.1-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
 
-# Instalando php 8.2
+
+# Instalando php
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
-sudo apt install php8.2
-#Extensiones de php8.2
-sudo apt install php8.2-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
-sudo a2enconf php8.2-fpm
+sudo apt install $PHP
+#Extensiones de php
+sudo apt install $PHP-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
+sudo a2enconf $PHP-fpm
 
 # Generando las claves ssh
 mkdir ~/.ssh

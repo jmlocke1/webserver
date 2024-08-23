@@ -1,5 +1,6 @@
 #!/bin/bash
-FREEFILESYNC=FreeFileSync_12.5_Linux
+FREEFILESYNC=FreeFileSync_13.7_Linux
+
 # Instalando FreeFileSync
 # Primero instalamos las librerías libgtk
 apt install libgtk2.0-0
